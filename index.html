@@ -22,6 +22,9 @@
             border-color: #007bff;
             background-color: #e9f5ff;
         }
+        .question {
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
@@ -29,22 +32,190 @@
 <div class="container">
     <h1 class="mt-4">Khảo sát về chương trình "Thanh Xuân Có Bạn" mùa 2</h1>
 
+    <!-- Câu A1 -->
+    <div class="question">
+        <label for="A1" class="form-label">A1. Lần cuối cùng bạn xem chương trình 'Thanh Xuân Có Bạn' mùa 2 một cách đáng kể là vào thời gian nào?</label>
+        <input type="date" id="A1" class="form-control" required>
+    </div>
+
+    <!-- Câu A2 -->
+    <div class="question">
+        <label for="A2" class="form-label">A2. Lúc đó, bạn đã xem bao nhiêu tập của chương trình?</label>
+        <select id="A2" class="form-select" required>
+            <option value="" disabled selected>Chọn số tập đã xem</option>
+            <option value="1">Tất cả các tập (23 hoặc 24)</option>
+            <option value="2">Hơn một nửa số tập (từ 13 tới 22)</option>
+            <option value="3">Chưa đầy một nửa số tập (từ 1 tới 11)</option>
+        </select>
+    </div>
+
+    <!-- Câu A3 -->
+    <div class="question">
+        <label for="A3" class="form-label">A3. Trong (những) lần bạn xem chương trình, bạn thường xem qua nền tảng nào?</label>
+        <div id="A3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="iQIYI" id="platform1">
+                <label class="form-check-label" for="platform1">iQIYI</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="YouTube" id="platform2">
+                <label class="form-check-label" for="platform2">Kênh YouTube chính thức của iQIYI</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Other" id="platform3">
+                <label class="form-check-label" for="platform3">Các nền tảng khác</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Câu A4 -->
+    <div class="question">
+        <label for="A4" class="form-label">A4. Bạn có thường xuyên tham gia vào việc bình chọn cho thực tập sinh không?</label>
+        <input type="range" class="form-range" id="A4" min="1" max="5" step="1">
+        <div class="d-flex justify-content-between">
+            <span>Không bao giờ</span>
+            <span>Rất thường xuyên</span>
+        </div>
+    </div>
+
     <!-- Câu A5: Chọn "pick" của bạn -->
-    <div class="my-5">
-        <h4>A5. Hãy cho biết "pick" của bạn trong chương trình</h4>
+    <div class="question">
+        <label for="A5" class="form-label">A5. Hãy cho biết "pick" của bạn trong chương trình</label>
         <div id="traineeList" class="row">
             <!-- Khối option của thực tập sinh sẽ được tạo động trong JavaScript -->
         </div>
     </div>
 
+    <!-- Câu A6 -->
+    <div class="question">
+        <label for="A6" class="form-label">A6. Điều gì khiến bạn "pick" những thực tập sinh đó? (Chọn tất cả những lý do đúng với bạn)</label>
+        <div id="A6">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="singing" id="reason1">
+                <label class="form-check-label" for="reason1">Kỹ năng ca hát</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="dancing" id="reason2">
+                <label class="form-check-label" for="reason2">Kỹ năng vũ đạo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="personality" id="reason3">
+                <label class="form-check-label" for="reason3">Phẩm chất, tính cách</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="appearance" id="reason4">
+                <label class="form-check-label" for="reason4">Ngoại hình</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="story" id="reason5">
+                <label class="form-check-label" for="reason5">Câu chuyện, hành trình nỗ lực</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="other" id="reason6">
+                <label class="form-check-label" for="reason6">Khác (Vui lòng ghi rõ)</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Câu A7 -->
+    <div class="question">
+        <label for="A7" class="form-label">A7. Bạn có thường xuyên thay đổi người bạn "pick" trong chương trình không?</label>
+        <input type="range" class="form-range" id="A7" min="1" max="5" step="1">
+        <div class="d-flex justify-content-between">
+            <span>Không bao giờ</span>
+            <span>Rất thường xuyên</span>
+        </div>
+    </div>
+
+    <!-- Câu A8 -->
+    <div class="question">
+        <label for="A8" class="form-label">A8. Bạn có thường xuyên theo dõi hoạt động của thực tập sinh bên ngoài chương trình không?</label>
+        <input type="range" class="form-range" id="A8" min="1" max="5" step="1">
+        <div class="d-flex justify-content-between">
+            <span>Không bao giờ</span>
+            <span>Rất thường xuyên</span>
+        </div>
+    </div>
+
+    <!-- Câu A9 -->
+    <div class="question">
+        <label for="A9" class="form-label">A9. Bạn có thường xuyên tham gia vào các hoạt động của cộng đồng người hâm mộ không?</label>
+        <input type="range" class="form-range" id="A9" min="1" max="5" step="1">
+        <div class="d-flex justify-content-between">
+            <span>Không bao giờ</span>
+            <span>Rất thường xuyên</span>
+        </div>
+    </div>
+
+    <!-- Câu A10 -->
+    <div class="question">
+        <label for="A10" class="form-label">A10. Mức độ yêu thích chương trình của bạn là bao nhiêu?</label>
+        <input type="range" class="form-range" id="A10" min="1" max="5" step="1">
+        <div class="d-flex justify-content-between">
+            <span>Rất không thích</span>
+            <span>Rất thích</span>
+        </div>
+    </div>
+
+    <!-- Phần B: Thông tin cá nhân -->
+    <h3>Phần B: Thông tin cá nhân</h3>
+
+    <!-- Câu B1 -->
+    <div class="question">
+        <label for="B1" class="form-label">B1. Bạn vui lòng cho biết giới tính của bạn?</label>
+        <select id="B1" class="form-select" required>
+            <option value="" disabled selected>Chọn giới tính</option>
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+        </select>
+    </div>
+
+    <!-- Câu B2 -->
+    <div class="question">
+        <label for="B2" class="form-label">B2. Bạn bao nhiêu tuổi tại thời điểm bạn đã nêu ở câu A1?</label>
+        <input type="number" id="B2" class="form-control" required>
+    </div>
+
+    <!-- Câu B3 -->
+    <div class="question">
+        <label for="B3" class="form-label">B3. Lúc đó, bạn đang làm công việc gì?</label>
+        <select id="B3" class="form-select" required>
+            <option value="" disabled selected>Chọn công việc</option>
+            <option value="1">Học sinh phổ thông</option>
+            <option value="2">Học sinh giáo dục nghề nghiệp</option>
+            <option value="3">Sinh viên cao đẳng</option>
+            <option value="4">Sinh viên đại học</option>
+            <option value="5">Học viên cao học</option>
+            <option value="6">Nghiên cứu sinh</option>
+            <option value="7">Cán bộ, công chức</option>
+            <option value="8">Người lao động</option>
+            <option value="9">Chủ doanh nghiệp</option>
+            <option value="10">Tự do</option>
+        </select>
+    </div>
+
+    <!-- Câu B4 -->
+    <div class="question">
+        <label for="B4" class="form-label">B4. Lúc đó, bạn đang sinh sống ở đâu?</label>
+        <select id="B4" class="form-select" required>
+            <option value="" disabled selected>Chọn khu vực</option>
+            <option value="KV1">KV1</option>
+            <option value="KV2">KV2</option>
+            <option value="KV3">KV3</option>
+            <option value="KV2-NT">KV2-NT</option>
+            <option value="Ngoài lãnh thổ Việt Nam">Ngoài lãnh thổ Việt Nam</option>
+        </select>
+    </div>
+
     <!-- Nút Submit -->
-    <button id="submitBtn" class="btn btn-primary">Hoàn thành khảo sát</button>
+    <button id="submitBtn" class="btn btn-primary mt-4">Hoàn thành khảo sát</button>
 </div>
 
 <!-- Bootstrap JS & Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Dữ liệu về các thực tập sinh (ví dụ: tên và hình ảnh)
+    // Dữ liệu thực tập sinh cho câu A5
     const trainees = [
         { id: 1, img: 'https://via.placeholder.com/100', vnName: 'Tên VN 1', cnName: '中文名 1', enName: 'English Name 1' },
         { id: 2, img: 'https://via.placeholder.com/100', vnName: 'Tên VN 2', cnName: '中文名 2', enName: 'English Name 2' },
@@ -52,12 +223,10 @@
         // Thêm các thực tập sinh khác tại đây...
     ];
 
-    const maxSelections = 9;  // Giới hạn số lượng pick
+    const maxSelections = 9;
     let selectedTrainees = [];
 
-    // Tạo danh sách thực tập sinh và thêm vào trang
     const traineeList = document.getElementById('traineeList');
-
     trainees.forEach(trainee => {
         const col = document.createElement('div');
         col.classList.add('col-md-4');
@@ -73,36 +242,45 @@
         `;
 
         traineeDiv.addEventListener('click', () => selectTrainee(traineeDiv));
-
         col.appendChild(traineeDiv);
         traineeList.appendChild(col);
     });
 
-    // Hàm chọn/ bỏ chọn thực tập sinh
     function selectTrainee(traineeDiv) {
         const id = traineeDiv.dataset.id;
-
         if (traineeDiv.classList.contains('selected')) {
             traineeDiv.classList.remove('selected');
-            selectedTrainees = selectedTrainees.filter(t => t !== id);  // Bỏ khỏi danh sách nếu đã chọn
+            selectedTrainees = selectedTrainees.filter(t => t !== id);
         } else {
             if (selectedTrainees.length < maxSelections) {
                 traineeDiv.classList.add('selected');
-                selectedTrainees.push(id);  // Thêm vào danh sách
+                selectedTrainees.push(id);
             } else {
                 alert(`Bạn chỉ có thể chọn tối đa ${maxSelections} thực tập sinh.`);
             }
         }
-        console.log('Selected trainees:', selectedTrainees);
     }
 
-    // Xử lý khi bấm nút "Hoàn thành khảo sát"
     document.getElementById('submitBtn').addEventListener('click', () => {
         if (selectedTrainees.length === 0) {
             alert('Vui lòng chọn ít nhất một thực tập sinh.');
         } else {
-            // Gửi dữ liệu lên server hoặc xử lý
-            console.log('Dữ liệu khảo sát:', selectedTrainees);
+            console.log('Dữ liệu khảo sát:', {
+                A1: document.getElementById('A1').value,
+                A2: document.getElementById('A2').value,
+                A3: Array.from(document.querySelectorAll('#A3 input:checked')).map(el => el.value),
+                A4: document.getElementById('A4').value,
+                A5: selectedTrainees,
+                A6: Array.from(document.querySelectorAll('#A6 input:checked')).map(el => el.value),
+                A7: document.getElementById('A7').value,
+                A8: document.getElementById('A8').value,
+                A9: document.getElementById('A9').value,
+                A10: document.getElementById('A10').value,
+                B1: document.getElementById('B1').value,
+                B2: document.getElementById('B2').value,
+                B3: document.getElementById('B3').value,
+                B4: document.getElementById('B4').value
+            });
             alert('Cảm ơn bạn đã hoàn thành khảo sát!');
         }
     });
