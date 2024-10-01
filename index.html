@@ -17,7 +17,7 @@
         }
 
         .trainee-option img {
-            max-width: 100px;
+            max-width: 100%;
             margin-bottom: 10px;
         }
 
@@ -106,8 +106,8 @@
                         đáng kể là vào thời gian nào?</label>
                     <input type="date" id="A1" class="form-control" required>
                 </div>
-                <hr
-                <!-- Câu A2 -->
+                <hr>
+                 <!-- Câu A2 -->
                 <div class="question">
                     <label for="A2" class="form-label">A2. Lúc đó, bạn đã xem bao nhiêu tập của chương trình?</label>
                     <select id="A2" class="form-select" required>
@@ -117,6 +117,7 @@
                         <option value="3">Chưa đầy một nửa số tập (từ 1 tới 11)</option>
                     </select>
                 </div>
+                <hr>
 
                 <!-- Câu A3 -->
                 <div class="question">
@@ -138,6 +139,7 @@
                         </div>
                     </div>
                 </div>
+                <hr>
 
                 <!-- Câu A4: Chọn mức độ tham gia bình chọn -->
                 <div class="question">
@@ -160,6 +162,7 @@
                         <span id="A4-value">Chưa chọn</span>
                     </div>
                 </div>
+                <hr>
 
 
                 <!-- Câu A5: Chọn "pick" của bạn -->
@@ -169,6 +172,7 @@
                         <!-- Khối option của thực tập sinh sẽ được tạo động trong JavaScript -->
                     </div>
                 </div>
+                <hr>
 
                 <!-- Câu A6 -->
                 <div class="question">
@@ -202,6 +206,7 @@
                         </div>
                     </div>
                 </div>
+                <hr>
 
                 <!-- Câu A7 -->
                 <div class="question">
@@ -224,6 +229,7 @@
                         <span id="A7-value">Chưa chọn</span>
                     </div>
                 </div>
+                <hr>
 
                 <!-- Câu A8 -->
                 <div class="question">
@@ -246,6 +252,7 @@
                         <span id="A8-value">Chưa chọn</span>
                     </div>
                 </div>
+                <hr>
 
                 <!-- Câu A9 -->
                 <div class="question">
@@ -269,6 +276,7 @@
                         <span id="A9-value">Chưa chọn</span>
                     </div>
                 </div>
+                <hr>
 
                 <!-- Câu A10 -->
                 <div class="question">
@@ -349,36 +357,36 @@
     <!-- Bootstrap JS & Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Dữ liệu thực tập sinh cho câu A5
-        const trainees = [
-            { id: 1, img: 'https://via.placeholder.com/100', vnName: 'Tên VN 1', cnName: '中文名 1', enName: 'English Name 1' },
-            { id: 2, img: 'https://via.placeholder.com/100', vnName: 'Tên VN 2', cnName: '中文名 2', enName: 'English Name 2' },
-            { id: 3, img: 'https://via.placeholder.com/100', vnName: 'Tên VN 3', cnName: '中文名 3', enName: 'English Name 3' },
-            // Thêm các thực tập sinh khác tại đây...
-        ];
-
+        let trainees = [];
         const maxSelections = 9;
         let selectedTrainees = [];
-
         const traineeList = document.getElementById('traineeList');
-        trainees.forEach(trainee => {
-            const col = document.createElement('div');
-            col.classList.add('col-md-4');
-
-            const traineeDiv = document.createElement('div');
-            traineeDiv.classList.add('trainee-option');
-            traineeDiv.dataset.id = trainee.id;
-
-            traineeDiv.innerHTML = `
+        fetch('/trainees.json')
+            .then(response => response.json())
+            .then(data => {
+                trainees = data;
+                trainees.forEach(trainee => {
+                    const col = document.createElement('div');
+                    col.classList.add('col-xl-2');
+                    col.classList.add('col-md-3');
+                    col.classList.add('col-sm-4');
+                    col.classList.add('col-6');
+                    const traineeDiv = document.createElement('div');
+                    traineeDiv.classList.add('trainee-option');
+                    traineeDiv.dataset.id = trainee.id;
+                    traineeDiv.innerHTML = `
             <img src="${trainee.img}" alt="Hình của ${trainee.vnName}">
-            <h5>${trainee.vnName}</h5>
-            <p>${trainee.cnName}<br>${trainee.enName}</p>
+            <h6>${trainee.vnName}</h6>
+            <small>${trainee.cnName}<br>${trainee.enName}</small>
+            <hr>
+            <div style="font-size:xx-small">${trainee.enCompany}<br>${trainee.cnCompany ? trainee.cnCompany : ""}</div>
         `;
 
-            traineeDiv.addEventListener('click', () => selectTrainee(traineeDiv));
-            col.appendChild(traineeDiv);
-            traineeList.appendChild(col);
-        });
+                    traineeDiv.addEventListener('click', () => selectTrainee(traineeDiv));
+                    col.appendChild(traineeDiv);
+                    traineeList.appendChild(col);
+                });
+            });
 
         function selectTrainee(traineeDiv) {
             const id = traineeDiv.dataset.id;
