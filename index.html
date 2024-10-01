@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khảo sát Thanh Xuân Có Bạn</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .trainee-option {
             border: 1px solid #ddd;
@@ -28,34 +29,6 @@
 
         .question {
             margin-bottom: 30px;
-        }
-    </style>
-    <style>
-        .range-container {
-            position: relative;
-            width: 100%;
-            margin-top: 20px;
-            /* Tạo khoảng cách giữa câu hỏi và thanh trượt */
-        }
-
-        .range-labels {
-            display: flex;
-            justify-content: space-between;
-            position: absolute;
-            top: -10px;
-            /* Điều chỉnh vị trí nhãn phía trên thanh trượt */
-            width: 100%;
-            padding: 0 10px;
-        }
-
-        .range-labels span {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .form-range {
-            margin-top: 20px;
-            /* Tạo khoảng cách dưới thanh trượt để nhãn không bị đè lên */
         }
     </style>
     <style>
@@ -154,8 +127,8 @@
                         <div class="rectangle-option" data-value="5">5</div>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <strong>Không bao giờ</strong>
-                        <strong>Rất thường xuyên</strong>
+                        <strong style="font-size: small;">Không bao giờ</strong>
+                        <strong style="font-size: small;">Rất thường xuyên</strong>
                     </div>
                     <br />
                     <div class="alert alert-info" role="alert">
@@ -221,8 +194,8 @@
                         <div class="rectangle-option" data-value="5">5</div>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <strong>Không bao giờ</strong>
-                        <strong>Rất thường xuyên</strong>
+                        <strong style="font-size: small;">Không bao giờ</strong>
+                        <strong style="font-size: small;">Rất thường xuyên</strong>
                     </div>
                     <br />
                     <div class="alert alert-info" role="alert">
@@ -244,8 +217,8 @@
                         <div class="rectangle-option" data-value="5">5</div>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <strong>Không bao giờ</strong>
-                        <strong>Rất thường xuyên</strong>
+                        <strong style="font-size: small;">Không bao giờ</strong>
+                        <strong style="font-size: small;">Rất thường xuyên</strong>
                     </div>
                     <br />
                     <div class="alert alert-info" role="alert">
@@ -268,8 +241,8 @@
                         <div class="rectangle-option" data-value="5">5</div>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <strong>Không bao giờ</strong>
-                        <strong>Rất thường xuyên</strong>
+                        <strong style="font-size: small;">Không bao giờ</strong>
+                        <strong style="font-size: small;">Rất thường xuyên</strong>
                     </div>
                     <br />
                     <div class="alert alert-info" role="alert">
@@ -289,8 +262,8 @@
                         <div class="rectangle-option" data-value="5">5</div>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <strong>Không bao giờ</strong>
-                        <strong>Rất thường xuyên</strong>
+                        <strong style="font-size: small;">Không bao giờ</strong>
+                        <strong style="font-size: small;">Rất thường xuyên</strong>
                     </div>
                     <br />
                     <div class="alert alert-info" role="alert">
@@ -398,7 +371,12 @@
                     traineeDiv.classList.add('selected');
                     selectedTrainees.push(id);
                 } else {
-                    alert(`Bạn chỉ có thể chọn tối đa ${maxSelections} thực tập sinh.`);
+                    //alert(`Bạn chỉ có thể chọn tối đa ${maxSelections} thực tập sinh.`);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `Bạn chỉ có thể chọn tối đa ${maxSelections} thực tập sinh`,
+                    })
                 }
             }
         }
