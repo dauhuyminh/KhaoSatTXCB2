@@ -94,177 +94,203 @@
 <body>
 
     <div class="container">
-        <h1 class="mt-4">Khảo sát về chương trình "Thanh Xuân Có Bạn" mùa 2</h1>
-
-        <!-- Câu A1 -->
-        <div class="question">
-            <label for="A1" class="form-label">A1. Lần cuối cùng bạn xem chương trình 'Thanh Xuân Có Bạn' mùa 2 một cách
-                đáng kể là vào thời gian nào?</label>
-            <input type="date" id="A1" class="form-control" required>
-        </div>
-
-        <!-- Câu A2 -->
-        <div class="question">
-            <label for="A2" class="form-label">A2. Lúc đó, bạn đã xem bao nhiêu tập của chương trình?</label>
-            <select id="A2" class="form-select" required>
-                <option value="" disabled selected>Chọn số tập đã xem</option>
-                <option value="1">Tất cả các tập (23 hoặc 24)</option>
-                <option value="2">Hơn một nửa số tập (từ 13 tới 22)</option>
-                <option value="3">Chưa đầy một nửa số tập (từ 1 tới 11)</option>
-            </select>
-        </div>
-
-        <!-- Câu A3 -->
-        <div class="question">
-            <label for="A3" class="form-label">A3. Trong (những) lần bạn xem chương trình, bạn thường xem qua nền tảng
-                nào?</label>
-            <div id="A3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="iQIYI" id="platform1">
-                    <label class="form-check-label" for="platform1">iQIYI</label>
+        <div class="card">
+            <h6 class="card-header">
+                Phần A: Khảo sát hoạt động xem chương trình “Thanh Xuân Có Bạn” mùa 2
+            </h6>
+            <div class="card-body">
+                <!-- Câu A1 -->
+                <div class="question">
+                    <label for="A1" class="form-label">A1. Lần cuối cùng bạn xem chương trình "Thanh Xuân Có Bạn" mùa 2
+                        một cách
+                        đáng kể là vào thời gian nào?</label>
+                    <input type="date" id="A1" class="form-control" required>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="YouTube" id="platform2">
-                    <label class="form-check-label" for="platform2">Kênh YouTube chính thức của iQIYI</label>
+                <hr
+                <!-- Câu A2 -->
+                <div class="question">
+                    <label for="A2" class="form-label">A2. Lúc đó, bạn đã xem bao nhiêu tập của chương trình?</label>
+                    <select id="A2" class="form-select" required>
+                        <option value="" disabled selected>Chọn số tập đã xem</option>
+                        <option value="1">Tất cả các tập (23 hoặc 24)</option>
+                        <option value="2">Hơn một nửa số tập (từ 13 tới 22)</option>
+                        <option value="3">Chưa đầy một nửa số tập (từ 1 tới 11)</option>
+                    </select>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Other" id="platform3">
-                    <label class="form-check-label" for="platform3">Các nền tảng khác</label>
+
+                <!-- Câu A3 -->
+                <div class="question">
+                    <label for="A3" class="form-label">A3. Trong (những) lần bạn xem chương trình, bạn thường xem qua
+                        nền tảng
+                        nào?</label>
+                    <div id="A3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="iQIYI" id="platform1">
+                            <label class="form-check-label" for="platform1">iQIYI</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="YouTube" id="platform2">
+                            <label class="form-check-label" for="platform2">Kênh YouTube chính thức của iQIYI</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Other" id="platform3">
+                            <label class="form-check-label" for="platform3">Các nền tảng khác</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Câu A4: Chọn mức độ tham gia bình chọn -->
+                <div class="question">
+                    <label for="A4" class="form-label">A4. Bạn có thường xuyên tham gia vào việc bình chọn cho thực tập
+                        sinh
+                        không?</label>
+                    <div id="A4-options" class="d-flex justify-content-between rectangle-option-container">
+                        <div class="rectangle-option" data-value="1">1</div>
+                        <div class="rectangle-option" data-value="2">2</div>
+                        <div class="rectangle-option" data-value="3">3</div>
+                        <div class="rectangle-option" data-value="4">4</div>
+                        <div class="rectangle-option" data-value="5">5</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <strong>Không bao giờ</strong>
+                        <strong>Rất thường xuyên</strong>
+                    </div>
+                    <br />
+                    <div class="alert alert-info" role="alert">
+                        <span id="A4-value">Chưa chọn</span>
+                    </div>
+                </div>
+
+
+                <!-- Câu A5: Chọn "pick" của bạn -->
+                <div class="question">
+                    <label for="A5" class="form-label">A5. Hãy cho biết "pick" của bạn trong chương trình</label>
+                    <div id="traineeList" class="row">
+                        <!-- Khối option của thực tập sinh sẽ được tạo động trong JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Câu A6 -->
+                <div class="question">
+                    <label for="A6" class="form-label">A6. Điều gì khiến bạn "pick" những thực tập sinh đó? (Chọn tất cả
+                        những
+                        lý do đúng với bạn)</label>
+                    <div id="A6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="singing" id="reason1">
+                            <label class="form-check-label" for="reason1">Kỹ năng ca hát</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="dancing" id="reason2">
+                            <label class="form-check-label" for="reason2">Kỹ năng vũ đạo</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="personality" id="reason3">
+                            <label class="form-check-label" for="reason3">Phẩm chất, tính cách</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="appearance" id="reason4">
+                            <label class="form-check-label" for="reason4">Ngoại hình</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="story" id="reason5">
+                            <label class="form-check-label" for="reason5">Câu chuyện, hành trình nỗ lực</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="other" id="reason6">
+                            <label class="form-check-label" for="reason6">Khác (Vui lòng ghi rõ)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Câu A7 -->
+                <div class="question">
+                    <label for="A7" class="form-label">A7. Bạn có thường xuyên thay đổi người bạn "pick" trong chương
+                        trình
+                        không?</label>
+                    <div id="A7-options" class="d-flex justify-content-between rectangle-option-container">
+                        <div class="rectangle-option" data-value="1">1</div>
+                        <div class="rectangle-option" data-value="2">2</div>
+                        <div class="rectangle-option" data-value="3">3</div>
+                        <div class="rectangle-option" data-value="4">4</div>
+                        <div class="rectangle-option" data-value="5">5</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <strong>Không bao giờ</strong>
+                        <strong>Rất thường xuyên</strong>
+                    </div>
+                    <br />
+                    <div class="alert alert-info" role="alert">
+                        <span id="A7-value">Chưa chọn</span>
+                    </div>
+                </div>
+
+                <!-- Câu A8 -->
+                <div class="question">
+                    <label for="A8" class="form-label">A8. Bạn có thường xuyên theo dõi hoạt động của thực tập sinh bên
+                        ngoài
+                        chương trình không?</label>
+                    <div id="A8-options" class="d-flex justify-content-between rectangle-option-container">
+                        <div class="rectangle-option" data-value="1">1</div>
+                        <div class="rectangle-option" data-value="2">2</div>
+                        <div class="rectangle-option" data-value="3">3</div>
+                        <div class="rectangle-option" data-value="4">4</div>
+                        <div class="rectangle-option" data-value="5">5</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <strong>Không bao giờ</strong>
+                        <strong>Rất thường xuyên</strong>
+                    </div>
+                    <br />
+                    <div class="alert alert-info" role="alert">
+                        <span id="A8-value">Chưa chọn</span>
+                    </div>
+                </div>
+
+                <!-- Câu A9 -->
+                <div class="question">
+                    <label for="A9" class="form-label">A9. Bạn có thường xuyên tham gia vào các hoạt động của cộng đồng
+                        người
+                        hâm mộ không?</label>
+
+                    <div id="A9-options" class="d-flex justify-content-between rectangle-option-container">
+                        <div class="rectangle-option" data-value="1">1</div>
+                        <div class="rectangle-option" data-value="2">2</div>
+                        <div class="rectangle-option" data-value="3">3</div>
+                        <div class="rectangle-option" data-value="4">4</div>
+                        <div class="rectangle-option" data-value="5">5</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <strong>Không bao giờ</strong>
+                        <strong>Rất thường xuyên</strong>
+                    </div>
+                    <br />
+                    <div class="alert alert-info" role="alert">
+                        <span id="A9-value">Chưa chọn</span>
+                    </div>
+                </div>
+
+                <!-- Câu A10 -->
+                <div class="question">
+                    <label for="A10" class="form-label">A10. Mức độ yêu thích chương trình của bạn là bao nhiêu?</label>
+                    <div id="A10-options" class="d-flex justify-content-between rectangle-option-container">
+                        <div class="rectangle-option" data-value="1">1</div>
+                        <div class="rectangle-option" data-value="2">2</div>
+                        <div class="rectangle-option" data-value="3">3</div>
+                        <div class="rectangle-option" data-value="4">4</div>
+                        <div class="rectangle-option" data-value="5">5</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <strong>Không bao giờ</strong>
+                        <strong>Rất thường xuyên</strong>
+                    </div>
+                    <br />
+                    <div class="alert alert-info" role="alert">
+                        <span id="A10-value">Chưa chọn</span>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Câu A4: Chọn mức độ tham gia bình chọn -->
-        <div class="question">
-            <label for="A4" class="form-label">A4. Bạn có thường xuyên tham gia vào việc bình chọn cho thực tập sinh
-                không?</label>
-            <div id="A4-options" class="d-flex justify-content-between rectangle-option-container">
-                <div class="rectangle-option" data-value="1">1</div>
-                <div class="rectangle-option" data-value="2">2</div>
-                <div class="rectangle-option" data-value="3">3</div>
-                <div class="rectangle-option" data-value="4">4</div>
-                <div class="rectangle-option" data-value="5">5</div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <span>Không bao giờ</span>
-                <span>Rất thường xuyên</span>
-            </div>
-            <p id="A4-value" style="font-weight: bold;">Chưa chọn</p>
-        </div>
-
-
-        <!-- Câu A5: Chọn "pick" của bạn -->
-        <div class="question">
-            <label for="A5" class="form-label">A5. Hãy cho biết "pick" của bạn trong chương trình</label>
-            <div id="traineeList" class="row">
-                <!-- Khối option của thực tập sinh sẽ được tạo động trong JavaScript -->
-            </div>
-        </div>
-
-        <!-- Câu A6 -->
-        <div class="question">
-            <label for="A6" class="form-label">A6. Điều gì khiến bạn "pick" những thực tập sinh đó? (Chọn tất cả những
-                lý do đúng với bạn)</label>
-            <div id="A6">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="singing" id="reason1">
-                    <label class="form-check-label" for="reason1">Kỹ năng ca hát</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="dancing" id="reason2">
-                    <label class="form-check-label" for="reason2">Kỹ năng vũ đạo</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="personality" id="reason3">
-                    <label class="form-check-label" for="reason3">Phẩm chất, tính cách</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="appearance" id="reason4">
-                    <label class="form-check-label" for="reason4">Ngoại hình</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="story" id="reason5">
-                    <label class="form-check-label" for="reason5">Câu chuyện, hành trình nỗ lực</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="other" id="reason6">
-                    <label class="form-check-label" for="reason6">Khác (Vui lòng ghi rõ)</label>
-                </div>
-            </div>
-        </div>
-
-        <!-- Câu A7 -->
-        <div class="question">
-            <label for="A7" class="form-label">A7. Bạn có thường xuyên thay đổi người bạn "pick" trong chương trình
-                không?</label>
-            <div id="A7-options" class="d-flex justify-content-between rectangle-option-container">
-                <div class="rectangle-option" data-value="1">1</div>
-                <div class="rectangle-option" data-value="2">2</div>
-                <div class="rectangle-option" data-value="3">3</div>
-                <div class="rectangle-option" data-value="4">4</div>
-                <div class="rectangle-option" data-value="5">5</div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <span>Không bao giờ</span>
-                <span>Rất thường xuyên</span>
-            </div>
-            <p id="A7-value" style="font-weight: bold;">Chưa chọn</p>
-        </div>
-
-        <!-- Câu A8 -->
-        <div class="question">
-            <label for="A8" class="form-label">A8. Bạn có thường xuyên theo dõi hoạt động của thực tập sinh bên ngoài
-                chương trình không?</label>
-            <div id="A8-options" class="d-flex justify-content-between rectangle-option-container">
-                <div class="rectangle-option" data-value="1">1</div>
-                <div class="rectangle-option" data-value="2">2</div>
-                <div class="rectangle-option" data-value="3">3</div>
-                <div class="rectangle-option" data-value="4">4</div>
-                <div class="rectangle-option" data-value="5">5</div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <span>Không bao giờ</span>
-                <span>Rất thường xuyên</span>
-            </div>
-            <p id="A8-value" style="font-weight: bold;">Chưa chọn</p>
-        </div>
-
-        <!-- Câu A9 -->
-        <div class="question">
-            <label for="A9" class="form-label">A9. Bạn có thường xuyên tham gia vào các hoạt động của cộng đồng người
-                hâm mộ không?</label>
-
-            <div id="A9-options" class="d-flex justify-content-between rectangle-option-container">
-                <div class="rectangle-option" data-value="1">1</div>
-                <div class="rectangle-option" data-value="2">2</div>
-                <div class="rectangle-option" data-value="3">3</div>
-                <div class="rectangle-option" data-value="4">4</div>
-                <div class="rectangle-option" data-value="5">5</div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <span>Không bao giờ</span>
-                <span>Rất thường xuyên</span>
-            </div>
-            <p id="A9-value" style="font-weight: bold;">Chưa chọn</p>
-        </div>
-
-        <!-- Câu A10 -->
-        <div class="question">
-            <label for="A10" class="form-label">A10. Mức độ yêu thích chương trình của bạn là bao nhiêu?</label>
-            <div id="A10-options" class="d-flex justify-content-between rectangle-option-container">
-                <div class="rectangle-option" data-value="1">1</div>
-                <div class="rectangle-option" data-value="2">2</div>
-                <div class="rectangle-option" data-value="3">3</div>
-                <div class="rectangle-option" data-value="4">4</div>
-                <div class="rectangle-option" data-value="5">5</div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <span>Không bao giờ</span>
-                <span>Rất thường xuyên</span>
-            </div>
-            <p id="A10-value" style="font-weight: bold;">Chưa chọn</p>
-        </div>
-
         <!-- Phần B: Thông tin cá nhân -->
         <h3>Phần B: Thông tin cá nhân</h3>
 
@@ -368,7 +394,7 @@
                 }
             }
         }
-        
+
         function setupRectangleOptions(questionId) {
             const options = document.querySelectorAll(`#${questionId}-options .rectangle-option`);
             const selectedValueDisplay = document.getElementById(`${questionId}-value`);
@@ -397,7 +423,7 @@
 
 
         document.getElementById('submitBtn').addEventListener('click', () => {
-            
+
 
             if (selectedTrainees.length === 0) {
                 alert('Vui lòng chọn ít nhất một thực tập sinh.');
