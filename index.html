@@ -75,12 +75,11 @@
                 <!-- Câu A1 -->
                 <div class="question">
                     <label for="A1" class="form-label">A1. Lần cuối cùng bạn xem chương trình "Thanh Xuân Có Bạn" mùa 2
-                        một cách
-                        đáng kể là vào thời gian nào?</label>
-                    <input type="date" id="A1" class="form-control" required>
+                        một cách đáng kể là vào thời gian nào?</label>
+                    <input type="text" id="A1" class="form-control yearpicker" required>
                 </div>
                 <hr>
-                 <!-- Câu A2 -->
+                <!-- Câu A2 -->
                 <div class="question">
                     <label for="A2" class="form-label">A2. Lúc đó, bạn đã xem bao nhiêu tập của chương trình?</label>
                     <select id="A2" class="form-select" required>
@@ -407,6 +406,9 @@
         setupRectangleOptions('A9');
         setupRectangleOptions('A10');
 
+        document.addEventListener('DOMContentLoaded', function () {
+            $('.yearpicker').yearpicker();
+        });
 
         document.getElementById('submitBtn').addEventListener('click', () => {
 
