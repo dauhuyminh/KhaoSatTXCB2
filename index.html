@@ -91,8 +91,7 @@
                 <div class="question">
                     <label for="A1" class="form-label">
                         <strong>
-                            A1. Lần cuối cùng bạn xem chương trình "Thanh Xuân Có Bạn" mùa 2
-                            một cách đáng kể là vào thời gian nào?
+                            A1. Lần cuối cùng bạn xem chương trình "Thanh Xuân Có Bạn" mùa 2 một cách đáng kể là vào thời gian nào?
                         </strong>
                     </label>
                     <input type="text" id="A1" name="A1" class="form-control yearpicker" required>
@@ -180,30 +179,38 @@
                         lý do đúng với bạn)</label>
                     <div id="A6">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="singing" id="reason1">
+                            <input class="form-check-input" type="checkbox" value="1" id="A6_1">
                             <label class="form-check-label" for="reason1">Kỹ năng ca hát</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="dancing" id="reason2">
+                            <input class="form-check-input" type="checkbox" value="2" id="A6_2">
                             <label class="form-check-label" for="reason2">Kỹ năng vũ đạo</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="personality" id="reason3">
+                            <input class="form-check-input" type="checkbox" value="3" id="A6_3">
                             <label class="form-check-label" for="reason3">Phẩm chất, tính cách</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="appearance" id="reason4">
+                            <input class="form-check-input" type="checkbox" value="4" id="A6_4">
                             <label class="form-check-label" for="reason4">Ngoại hình</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="story" id="reason5">
+                            <input class="form-check-input" type="checkbox" value="5" id="A6_5">
                             <label class="form-check-label" for="reason5">Câu chuyện, hành trình nỗ lực</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="other" id="reason6">
+                            <input class="form-check-input" type="checkbox" value="6" id="A6_6" onchange="toggleA6Other()">
                             <label class="form-check-label" for="reason6">Khác (Vui lòng ghi rõ dưới đây)</label>
                         </div>
-                        <input type="text" class="form-control" id="otherReason" placeholder="Lý do khác">
+                        <input type="text" class="form-control" id="A6_other" placeholder="Lý do khác" disabled>
+
+                        <script>
+                            function toggleA6Other() {
+                                const A6_6 = document.getElementById('A6_6');
+                                const A6_other = document.getElementById('A6_other');
+                                A6_other.disabled = !A6_6.checked;
+                            }
+                        </script>
                     </div>
                 </div>
                 <hr>
