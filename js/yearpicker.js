@@ -103,7 +103,7 @@ const methods = {
     if (this.show) {
       this.hideView();
     } else {
-      this.show();
+      this.showView();
     }
   },
 };
@@ -357,9 +357,9 @@ const Yearpicker = (function () {
       return e;
     },
     createItem: function (data) {
-      const options = this.options,
-        itemTag = options.itemTag,
-        classes = [];
+      const options = this.options;
+      const itemTag = options.itemTag;
+      const classes = [];
 
       const items = {
         text: "",
@@ -373,14 +373,12 @@ const Yearpicker = (function () {
       if (items.selected) {
         classes.push(options.selectedClass);
       }
-
       if (items.disabled) {
         classes.push(options.disabledClass);
       }
 
-      return `<${itemTag} class="${items.view} ${classes.join(
-        " "
-      )}" data-view="${items.view}">${items.text}</${itemTag}>`;
+      const classNames = [items.view].concat(classes).join(" ").trim();
+      return `<${itemTag} class="${classNames}" data-view="${items.view}">${items.text}</${itemTag}>`;
     },
   };
 
